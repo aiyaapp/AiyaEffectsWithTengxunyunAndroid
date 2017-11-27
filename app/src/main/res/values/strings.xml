@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LiteAV</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+
+    <string name="btn_cancel">取消</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_return">返回</string>
+
+    <string name="video_decoding">视频正在解码中，请稍等...</string>
+    <string name="video_generating">视频生成中...</string>
+    <string name="video_edit">编辑视频</string>
+    <string name="video_join">视频合成</string>
+    <string name="video_drag_sort">视频将按照列表顺序进行合成，您可以长按拖动进行片段顺序调整。</string>
+    <string name="video_join_preview">片段合成预览</string>
+    <string name="video_preview">视频预览</string>
+    <string name="video_only_save">仅保存</string>
+    <string name="video_save_and_publish">保存并发布</string>
+    <string name="video_edit_segment">设置想要截取的片段</string>
+
+    <string name="vod_ffplay">ffplay</string>
+    <string name="vod_exo">exo</string>
+    <string name="delete">删除</string>
+    <string name="music_empty">空空如也</string>
+    <string name="music_loading">正在加载本地音乐...</string>
+    <string name="title_activity_rtmp_room_demo">RtmpRoomDemoActivity</string>
+    <string name="title_activity_test_test_test_acvitity">TestTestTestAcvitity</string>
+
+    <string name="rtmproom_room_iterm_members">%1$d 人在房间里...</string>
+</resources>

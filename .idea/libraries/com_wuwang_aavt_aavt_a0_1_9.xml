@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.wuwang.aavt:aavt-a0.1.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.wuwang.aavt/aavt/a0.1.9/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.wuwang.aavt/aavt/a0.1.9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.wuwang.aavt/aavt/a0.1.9/acf66660e19b27a1204121fd05125fe29b36ad00/aavt-a0.1.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

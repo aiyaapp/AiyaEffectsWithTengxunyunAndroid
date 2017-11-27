@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\zxing-core-3.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\zxing-core-3.2.1_f9a805b37eb0a7f22a129da3b510941b2692adfe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\wechat-sdk-android-with-mta-1.1.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="379056fcb09a02bd0db722be359695ad88beb04d">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\wechat-sdk-android-with-mta-1.1.6_d78314027a61052ef7c21a1ac6005cf95cb6cef1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\aiyalibs\aiyagift\AyGift.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2341a0ad221063ddea6c327050f9af9b64f573ed">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\AyGift_f47826df0ef9b56ca185ef4c46039d8332dd3048.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_1890bd61da662173224d614223d3bd3f7cbcd312.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\barcodescanner-core-1.8.4\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-barcodescanner-core-1.8.4_188eb8b96f23d728cbbb66d6931fc5793614e1dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\LiteAVSDK_Smart\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="212069bc3e4bdf6241f8bb321a047d98e63d029c">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-LiteAVSDK_Smart_ecbdc0ece9957f8d2a6d1e59267afee2f0c3dc3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\umeng_social_shareview.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="073317d66b5c48377b80a0d927bbbf2269a40478">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\umeng_social_shareview_cb5954cbbb9d9b5cee7e6bf59b8edfbd905a5c48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_61414fb0a2c16645b9e7a010600a08046a055d4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_6dfecd73fe92a52fe219859c27d6f5b1deeff35e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\volley-1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-volley-1.0.0_5bdc3b87bbc64a408f419ebcc1f29c8455870dbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\aiyalibs\core\AySdkCore.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="629bb613fae9074a1db7ced54fd455c878f7c8d5">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\AySdkCore_a72844ee48ca32c49210cbefd288708edb9a42bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\LiteAVSDK_Smart\jars\libs\LiteAVSDK_Smart.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f1344a3bb41cbfacb4460d53f485bcb05ca39be">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\LiteAVSDK_Smart_3fe1004adc3b1d9174f4bc605ef16f1f3650d6b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_815b4201d5bc2a54ef04442f2cda71daa3e0fcc7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_7ad304bec58e5ef0f28c171cabf852a239e6f737.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\SocialSDK_QQ_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6613d9480532b6b4d91aafd192350e0b9fcee502">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\SocialSDK_QQ_Simplify_ef5241830023b651782c732d4e8cf6d0526a96fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\umeng_social_net.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ae5e7e8f78a0b150398087327eda81f872cdcae2">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\umeng_social_net_09913cd6d71e0078c3b921cb821d8cab9f5caf35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\open_sdk_r5781.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cbac7d081542657d885efd7a529a9267d22ec080">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\open_sdk_r5781_8e447a51093e69a174702bed15ec69745241e2ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\android-sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_759e6789b5665488bcabb12bedbaa5da8342f237.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_5b09a283b6f5898886dd36cae327b1e6da1af111.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\SocialSDK_WeChat_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dbad0e3e7ac8062dd9f7ce3e60ab0ddccc44553f">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\SocialSDK_WeChat_Simplify_bc422ba779d29c7596cbb83db794d3c7dc21ff90.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\liteimsdk-release\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6b7411de41dddd555aed1507682f980df61b9f27">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-liteimsdk-release_5d6439166d3708eaf4d4a5426a49ad856d07020b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\zxing-1.8.4\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-zxing-1.8.4_f516613459d289bb0391ee15c209ea31793fffdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\bugly_crash_release__2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f714da14a952d12529974cad9f0c7ae3cf1b9a42">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\bugly_crash_release__2.1_4c80a5c74bb57c8408f2a6f6f697e9805455a96d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_316dad07be5281fe26b26b634ff5c226d56a473b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_c14d05d5b3a8e6524746ab30beae91dfdb4ee2c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\okio-1.6.0_186c949d97b250f0c634c220029ea7b3d287a507.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_262c77f09e71b03980b5110d432d59eede792b61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\aiyalibs\beauty\AyBeauty.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="473cdf347938b9d519cf3c7ef922a8b2b33a9c24">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\AyBeauty_1f381764f2e73171074eccff8bc249cf9114d535.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\aiyalibs\aiyatrack\AyTrack.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="27cffa7a8081b40b71e3b55ed897a20f9f5f47c7">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\AyTrack_6e355a74468d46c26c684ea0b7bd3b239fa0c233.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\SocialSDK_Sina_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2733f75e9b808bfbf54db957b375f21d9eeb4c4d">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\SocialSDK_Sina_Simplify_039f90d860a0429926dd7c1ea17896e85700d887.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.wuwang.aavt\aavt\a0.1.9\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d2ab6fd462cbf5210e67b85f6bda0db64f56b62a">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.wuwang.aavt-aavt-a0.1.9_69289bb3a027dd37c13df8c1a18fe06e65263bdb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_72e0b49d13bcaf91b3ac9fc789c9e4291cf53a01.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\cos-sdk-android.1.4.3.11.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="feb2ff832664a8f547b1e975d7f63d112c247a1c">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\cos-sdk-android.1.4.3.11_bd441dd139063af36085c58d2b8c6ff6da226871.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support.constraint-constraint-layout-1.0.2_238a9b7e30ff1da08cdd9c16e035d007f07aa922.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.2.0_61ee759e26050624ff2dcdeb63bc3c109d218482.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\glide-3.7.0_2a53a48a392748835812da441d08251d7ec4a4e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_6f22120f15fb345b2be8857d9c5eee5b45031fa2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\sha1utils.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e777f426888bb1df2504e936d2825ff43c31425b">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\sha1utils_69f9d4b973bf81b095545132149c9c1ea836c5f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\aiyalibs\shortvideo\AyShaderEffect.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4fc3b93f3fd2d646ceffdf40f1c6ef77aed61562">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\AyShaderEffect_b10d14f76539cdf892b3a79ed0dd2dbe7fbc0102.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_c89fa8312f697bb77ff2652e0f68e170b931cc86.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\umeng_social_api.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="35352ed1ecfb082e85996474c3048332d1374276">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\umeng_social_api_60ef627e97f118961da8ee7029fb8b5a275c141f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\aiya\Desktop\Demo\app\libs\gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\aiya\Desktop\Demo\app\build\intermediates\pre-dexed\debug\gson-2.3.1_987f24a429343ee94da4dcdf55258325871a74e7.jar" />
+    </item>
+
+</items>

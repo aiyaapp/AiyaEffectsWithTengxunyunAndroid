@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="TextView"/>
+
+    <!--<View-->
+        <!--android:id="@+id/divider"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="4dp"-->
+        <!--android:background="#f00"-->
+        <!--android:gravity="center"/>-->
+</LinearLayout>

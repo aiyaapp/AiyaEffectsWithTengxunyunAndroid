@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/activity_bar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="36dp">
+
+        <TextView
+            android:id="@+id/rtmproom_title_textview"
+            android:text="多人会话"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="#EEEEEE"
+            android:textSize="18sp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/rtmproom_back_button"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/ic_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:background="#555555"
+            android:layout_height="1dp"/>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_below="@id/activity_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/rtmproom_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/rtmproom_global_log_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginBottom="60dp"
+            android:background="@color/transparent">
+
+            <TextView
+                android:id="@+id/rtmproom_global_log_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#75000000"
+                android:singleLine="false"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/rtmproom_init_failed_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ab930b"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
+            android:visibility="gone"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+
+</RelativeLayout>
+

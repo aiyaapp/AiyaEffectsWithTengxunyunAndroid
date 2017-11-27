@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="liteimsdk-release:@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/liteimsdk-release/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/liteimsdk-release/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
