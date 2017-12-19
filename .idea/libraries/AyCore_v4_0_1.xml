@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="AyCore-v4.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/610e0aba8ea38e6ecfc316617c8bf7c771211522/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/610e0aba8ea38e6ecfc316617c8bf7c771211522/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.aiyaapp.aiya/AyCore/v4.0.1/e8917630b69be8d6af90197c6080f686011a241c/AyCore-v4.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

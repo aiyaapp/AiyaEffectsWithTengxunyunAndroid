@@ -4,7 +4,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        applicationId "com.aiyaapp.aiya"
+        applicationId "com.aiyaapp.aiya.test"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -57,12 +57,14 @@ dependencies {
     compile files('libs/sha1utils.jar')
     compile files('libs/okio-1.6.0.jar')
 
-    compile 'com.wuwang.aavt:aavt:a0.1.9'
-    compile files('../aiyalibs/core/AySdkCore.jar')
-    compile files('../aiyalibs/aiyatrack/AyTrack.jar')
-    compile files('../aiyalibs/aiyagift/AyGift.jar')
-    compile files('../aiyalibs/shortvideo/AyShaderEffect.jar')
-    compile files('../aiyalibs/beauty/AyBeauty.jar')
+
+
+    compile 'com.aiyaapp.aiya:AyCore:v4.0.1'
+    compile 'com.aiyaapp.aiya:AyEffect:v4.0.1'
+    compile 'com.aiyaapp.aiya:AyBeauty:v4.0.1'
+    compile 'com.aiyaapp.aiya:AyFaceTrack:v4.0.1'
+    compile 'com.aiyaapp.aiya:AyShortVideoEffect:v4.0.1'
+
 
     compile(name: 'liteimsdk-release', ext: 'aar')
 

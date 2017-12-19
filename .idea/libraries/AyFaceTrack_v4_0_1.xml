@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="AyFaceTrack-v4.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/59cd5e62847a173d88601b58558530ac96c6c685/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/59cd5e62847a173d88601b58558530ac96c6c685/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.aiyaapp.aiya/AyFaceTrack/v4.0.1/259be7f4dacf72db20ab5389166c3414de1413b5/AyFaceTrack-v4.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
