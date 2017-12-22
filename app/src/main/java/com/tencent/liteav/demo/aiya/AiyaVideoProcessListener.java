@@ -3,9 +3,11 @@ package com.tencent.liteav.demo.aiya;
 import android.content.Context;
 import android.opengl.GLES20;
 
+import com.aiyaapp.aiya.SluggardSvEffectTool;
 import com.aiyaapp.aiya.filter.AyBigEyeFilter;
 import com.aiyaapp.aiya.filter.AyThinFaceFilter;
 import com.aiyaapp.aiya.filter.AyTrackFilter;
+import com.aiyaapp.aiya.filter.SvSpiritFreedFilter;
 import com.aiyaapp.aiya.render.AiyaGiftFilter;
 import com.tencent.rtmp.TXLivePusher;
 
@@ -24,10 +26,12 @@ public class AiyaVideoProcessListener implements TXLivePusher.VideoCustomProcess
     private AyThinFaceFilter mThinFaceFilter;
 
 
+    private SluggardSvEffectTool mSvTool = SluggardSvEffectTool.getInstance();
+
+
     public AiyaVideoProcessListener(Context mContext) {
         this.mContext = mContext;
     }
-
 
     @Override
     public int onTextureCustomProcess(int i, int i1, int i2) {
@@ -37,6 +41,7 @@ public class AiyaVideoProcessListener implements TXLivePusher.VideoCustomProcess
             mGiftFilter.sizeChanged(i1, i2);
             mGiftFilter.setEffect("assets/sticker/one/meta.json");
         }
+
         if (mTrackFilter == null) {
             mTrackFilter = new AyTrackFilter(mContext);
             mTrackFilter.create();
@@ -56,6 +61,7 @@ public class AiyaVideoProcessListener implements TXLivePusher.VideoCustomProcess
             mThinFaceFilter.sizeChanged(i1, i2);
             mThinFaceFilter.setDegree(1.0f);
         }
+
         mTrackFilter.drawToTexture(i);
         //贴图处理
         mGiftFilter.setFaceDataID(mTrackFilter.getFaceDataID());
@@ -67,18 +73,18 @@ public class AiyaVideoProcessListener implements TXLivePusher.VideoCustomProcess
         mThinFaceFilter.setFaceDataID(mTrackFilter.getFaceDataID());
         out = mThinFaceFilter.drawToTexture(out);
 
+        //短视频特效
+        out = mSvTool.processTexture(out, i1, i2, SvSpiritFreedFilter.class);
         //开启深度测试
         GLES20.glDisable(GLES20.GL_BLEND);
         GLES20.glDisable(GLES20.GL_DEPTH_TEST);
         return out;
     }
 
-
     @Override
     public void onDetectFacePoints(float[] floats) {
+
     }
-
-
     @Override
     public void onTextureDestoryed() {
 

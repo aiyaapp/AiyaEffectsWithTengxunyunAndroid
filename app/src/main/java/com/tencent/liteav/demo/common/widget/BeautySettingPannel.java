@@ -266,6 +266,7 @@ public class BeautySettingPannel extends FrameLayout implements SeekBar.OnSeekBa
             default:
                 break;
         }
+
         for (int i = 0; i < typeString.length; i++){
             mSencodeGradleArrayString.add(typeString[i]);
         }

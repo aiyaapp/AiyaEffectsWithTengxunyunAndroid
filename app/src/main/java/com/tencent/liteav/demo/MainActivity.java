@@ -121,6 +121,7 @@ public class MainActivity extends Activity {
                     MainActivity.this.startActivity(intent);
                 }
             });
+
             if (mSelectedModuleId == info.mIconId) {
                 mSelectedView = v;
                 mSelectedView.setBackgroudId(R.drawable.block_pressed);

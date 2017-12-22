@@ -59,11 +59,11 @@ dependencies {
 
 
 
-    compile 'com.aiyaapp.aiya:AyCore:v4.0.1'
-    compile 'com.aiyaapp.aiya:AyEffect:v4.0.1'
-    compile 'com.aiyaapp.aiya:AyBeauty:v4.0.1'
-    compile 'com.aiyaapp.aiya:AyFaceTrack:v4.0.1'
-    compile 'com.aiyaapp.aiya:AyShortVideoEffect:v4.0.1'
+    compile 'com.aiyaapp.aiya:AyCore:v4.0.2'
+    compile 'com.aiyaapp.aiya:AyEffect:v4.0.2'
+    compile 'com.aiyaapp.aiya:AyBeauty:v4.0.2'
+    compile 'com.aiyaapp.aiya:AyFaceTrack:v4.0.2'
+    compile 'com.aiyaapp.aiya:AyShortVideoEffect:v4.0.2'
 
 
     compile(name: 'liteimsdk-release', ext: 'aar')
