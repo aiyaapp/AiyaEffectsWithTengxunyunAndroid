@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="aavt-a0.2.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/81001256cc48d4a20b6489fa55368fe89a4fad3e/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/81001256cc48d4a20b6489fa55368fe89a4fad3e/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.aiyaapp.aavt/aavt/a0.2.2/38963f876e3b429f811cea7c56ba94fdb02dc851/aavt-a0.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

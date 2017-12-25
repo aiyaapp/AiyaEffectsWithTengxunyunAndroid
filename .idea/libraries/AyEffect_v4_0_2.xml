@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="AyEffect-v4.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/951cb224b5d2249053d9d472d40123d1ccd6a7aa/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/951cb224b5d2249053d9d472d40123d1ccd6a7aa/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.aiyaapp.aiya/AyEffect/v4.0.2/3d473af1e97ca9043069c58649bd2c862e7054cc/AyEffect-v4.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

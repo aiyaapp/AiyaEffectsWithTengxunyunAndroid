@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Service;
-import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -43,23 +42,19 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aiyaapp.aavt.gl.BaseFilter;
 import com.aiyaapp.aiya.AiyaEffects;
 import com.aiyaapp.aiya.AiyaTracker;
 import com.aiyaapp.aiya.render.AiyaGiftFilter;
 import com.tencent.liteav.demo.R;
 import com.tencent.liteav.demo.common.activity.QRCodeScanActivity;
-import com.tencent.liteav.demo.common.utils.TCUtils;
 import com.tencent.liteav.demo.common.widget.BeautySettingPannel;
-import com.tencent.liteav.demo.videoupload.impl.TVCConstants;
 import com.tencent.rtmp.ITXLivePushListener;
 import com.tencent.rtmp.TXLiveBase;
 import com.tencent.rtmp.TXLiveConstants;
 import com.tencent.rtmp.TXLivePushConfig;
 import com.tencent.rtmp.TXLivePusher;
-import com.tencent.rtmp.TXLog;
 import com.tencent.rtmp.ui.TXCloudVideoView;
-import com.wuwang.aavt.gl.BaseFilter;
-import com.wuwang.aavt.gl.GrayFilter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -163,7 +158,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AiyaEffects.init(this,"");
+        AiyaEffects.init(this,"477de67d19ba39fb656a4806c803b552");
 
         mLivePusher     = new TXLivePusher(this);
         mLivePushConfig = new TXLivePushConfig();
@@ -193,6 +188,8 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
         checkPublishPermission();
 
+
+        // TODO: 2017/12/25 0025 添加Aiya特效 
 
         mLivePusher.setVideoProcessListener(new TXLivePusher.VideoCustomProcessListener() {
             @Override
