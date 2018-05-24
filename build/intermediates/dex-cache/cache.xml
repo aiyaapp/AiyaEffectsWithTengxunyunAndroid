@@ -2,256 +2,742 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\SocialSDK_QQ_Simplify.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6613d9480532b6b4d91aafd192350e0b9fcee502">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\SocialSDK_QQ_Simplify_7982a6fc9748600177ec88cdccd8405deb05d098\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\81001256cc48d4a20b6489fa55368fe89a4fad3e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="94e1efc50a2e4f4ee3aaa19b1fb88c2eee0a25ea">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ae65ee851d0d7474a55a8d3410243525ec95f798\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\SocialSDK_Sina_Simplify.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2733f75e9b808bfbf54db957b375f21d9eeb4c4d">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\SocialSDK_Sina_Simplify_38ae31881a9d0f9075ac5555629fe1530e036e51\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\gson-2.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\gson-2.3.1_341411a60e57268ce3dcf015df0b9c4275f3a6f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_002dc99d5b980a7b15b2abe34dc1a58bdb6729f0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\zxing-core-3.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\zxing-core-3.2.1_48e8c610d48d155ccfd677f76a49927299ed92b2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\open_sdk_r5781.jar"
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/open_sdk_r5781.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="cbac7d081542657d885efd7a529a9267d22ec080">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\open_sdk_r5781_23850a3a249d4f7af39d44db16af3c9eed4602cd\classes.dex" />
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/open_sdk_r5781_428157a2d82bf105ffade6af2c442c665910ad3a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c61301d6e12e96953e809177088d1df0110e7ca3">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e8127c95080394cea176fe86b64b80c68604aac4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\a2fee21401465506c6b96307ef71dc50146e7cba\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ec2a9ae3e5e94208641797cc4cf680b362458d79\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\umeng_social_shareview.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="073317d66b5c48377b80a0d927bbbf2269a40478">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_shareview_ae8b2e304b268eae3e6c820a7cca7502729c660f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\0ed3302e7995222d8e9c35cff3d4e5c8f1313b74\output\jars\libs\LiteAVSDK_Smart.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5f1344a3bb41cbfacb4460d53f485bcb05ca39be">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\LiteAVSDK_Smart_a09325e7081fa083b489467252972833792a1c91\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\b323bd53a21c032a692c2e3c7711c957091c737a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fa58854eba3a7c63b81ae539873b171c95e20c97\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\fb0dcd84081bd50e6d139f7ff9d53690e38e3439\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="20bb6131a83c9b66e5b4e8ca5b1ecab082744081">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7982c323dca5dc6170378427351c005c6cb2d5a3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\4de93c639c36fb98cbcce80e8f862d595186ac8c\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6b7411de41dddd555aed1507682f980df61b9f27">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a26e5d1a030274d508b3e3e784e05bad0fc583d8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\cos-sdk-android.1.4.3.11.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="feb2ff832664a8f547b1e975d7f63d112c247a1c">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\cos-sdk-android.1.4.3.11_bb5ea38beb17e343165af34082ba196f96095179\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\umeng_social_api.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="35352ed1ecfb082e85996474c3048332d1374276">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_api_fed137702e319b5aa0920f98d80863230a5ff820\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\3c3ba8fd5b32e647ec78ee589f7745f1f4ac4785\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="16c4a452686548116c4e128575ebe956b7edb3df">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3d47f21d4f4ba2405fe381dca5f4e71bf1f8face\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\50a9068e1310542bb8b83e15e107815d95a147b1\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a7daf711e7ca7461f35734e78f14f265ae27badf">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_379e22c86a4a51ebb923736b54d3e3db69a71288\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\bugly_crash_release__2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f714da14a952d12529974cad9f0c7ae3cf1b9a42">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\bugly_crash_release__2.1_30b0e061d35a49960802fcc13bb1d9bac787a98f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\wechat-sdk-android-with-mta-1.1.6.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="379056fcb09a02bd0db722be359695ad88beb04d">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\wechat-sdk-android-with-mta-1.1.6_e2149616aa7c3154f505e55312df54be90ad134f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\SocialSDK_WeChat_Simplify.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="dbad0e3e7ac8062dd9f7ce3e60ab0ddccc44553f">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\SocialSDK_WeChat_Simplify_aa2a3309612c4c418473346f5e3080a9ef63448c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\f24176b65b6e99d13e93c61c3b25304124b185d9\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3a094cad3a2052286a32d04456af9c5cb4aeb696">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c445308d36d4d2884c82913f775bf235743ee5f6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\sha1utils.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e777f426888bb1df2504e936d2825ff43c31425b">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\sha1utils_bab94a7925e013beef753b4d54e556909bc32398\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\0ed3302e7995222d8e9c35cff3d4e5c8f1313b74\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="212069bc3e4bdf6241f8bb321a047d98e63d029c">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b2203bbaf6e1990fc329cb99b932a2a5e0ce0120\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\glide-3.7.0_ba6b09eef5d9c4a7dacf39a67bcc035d6c2d26f8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\libs\umeng_social_net.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ae5e7e8f78a0b150398087327eda81f872cdcae2">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng_social_net_73ac7391cb9eeef2c1ab54bbe7b48fc4620546b8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\65d0f72bb86efce670ae679e58b8b7710df377ca\output\jars\classes.jar"
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/32d297c84728d6709bac36d9541bc49012b5d393/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9036fcf8e3c09a4946ddae64e8d8814c151d6360\classes.dex" />
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_3cceb1be9da0a2dc37100a9bcc204dded3345ab8.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\951cb224b5d2249053d9d472d40123d1ccd6a7aa\output\jars\classes.jar"
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/umeng_social_shareview.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f431bec5340d9646ff1b9e487faca4e9077e6836">
-        <dex dex="E:\WorkSpace\Aiya\AiyaEffectsWithTengxunyunAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c15a4982bcf6e2f33b6a513d8ade3f2fe87df9ba\classes.dex" />
+        sha1="073317d66b5c48377b80a0d927bbbf2269a40478">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/umeng_social_shareview_7b46ccf3fe41c39e8c6da5f00229c342a5dfb776.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/okhttp-3.2.0_f49e9e89c4c5875367baa4ec78ce644463e288dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/SocialSDK_WeChat_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dbad0e3e7ac8062dd9f7ce3e60ab0ddccc44553f">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/SocialSDK_WeChat_Simplify_5f2b43a1d57a049cb0f5972d584a25270f19cc17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/cos-sdk-android.1.4.3.11.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="feb2ff832664a8f547b1e975d7f63d112c247a1c">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/cos-sdk-android.1.4.3.11_9d7044d7e0db2f410014f4aedf66b8cd70538ce1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/253f0bddef38e062ae3cdc3de4a8c29f7b6aa281/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6b7411de41dddd555aed1507682f980df61b9f27">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_72a257bec57894a23d5ab521e7ab81ac290049a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/okio-1.6.0_1ab24b4c2d9df62542765cf725b8e94f369fa9de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/ae835ce0e4f58b97d71c081098a6c547a015ae1d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a15b459774e4ef0d7f5a00626e398454803be92">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_28b6b14314b08cda37355c158bc355404de1acc4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/edccb788474ab6efe2d1c6139994a252ce0b06b7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_3dbfd392a4c8d2931ba074c632ff26386e9d2604.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/5112e6950bf2c3fb44a3adbfb65a2d3cb4372744/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="84cb66fcbb8a4da0c752478dc9f92a6df26d22d9">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_90c489a0f85c37d43cfc9cecfdcd3a0756bea6c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/edccb788474ab6efe2d1c6139994a252ce0b06b7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_3dbfd392a4c8d2931ba074c632ff26386e9d2604.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/1088ad104b07e71f248ad48bc68106dd9eb93bd8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_3effcd62cdc9e558ddd9a2f08c92ae8e7d0f1fb5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b41c21c88a0ed6ae21506b7b22050c595cd13af5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="212069bc3e4bdf6241f8bb321a047d98e63d029c">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_2ceafbdcb1aeb5ec1342149305621a87a07545b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/8b8339ea56a12af367717b636936a675636a778b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_c9fc1d8f38792b5abff9384db840e2d39806b55d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/zxing-core-3.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/zxing-core-3.2.1_3e9b2df8d95d113a9144ec8763c03afa9563e399.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b0f494a74da4ad98246d1d5f20b37c793ce18499/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e64831d458cfe8189f370249451728f0e3d592f">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_839cc55ce062ecad7b9e746fa13775d5f292e0ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/sha1utils.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e777f426888bb1df2504e936d2825ff43c31425b">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/sha1utils_400236344c0680c36bc3bd89e668fe7a294a5ab0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/edfc7c310c75c69ace457781f0c6c6e75a1a2be9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_e04cdfe6d58c84bf156eeb1a56609f9b656230ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/d51094eb07b16292b5561a41adb7e67bcc9cfc1d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_f6625fb094e325be9924aea2bfd2c53d2297f9db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/umeng_social_api.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="35352ed1ecfb082e85996474c3048332d1374276">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/umeng_social_api_d010b8eb073e46dd33c42a66a215a6531cc95436.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/437273c3048cbb520875ed3b51a0e495ba15e831/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_7df70d005f0dbe801e1f0d0d0351c7d94d35fdfb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/cos-sdk-android.1.4.3.11.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="feb2ff832664a8f547b1e975d7f63d112c247a1c">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/cos-sdk-android.1.4.3.11_9d7044d7e0db2f410014f4aedf66b8cd70538ce1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/3a048a78acbb7a560e5cec1f86dd2331530b60c4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_d76106a98bd6a6877fa9f5d505d9f87de5dc99f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/205c3437bce4623cd257bf1ae7eae9458eefea39/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_8e2a3ca27fd6e6be3a9932aa3cfa65d33531bd5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_3a7bb22909d54c29ad509a57a46c723008d7ecb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/okio-1.6.0_1ab24b4c2d9df62542765cf725b8e94f369fa9de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/umeng_social_shareview.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="073317d66b5c48377b80a0d927bbbf2269a40478">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/umeng_social_shareview_7b46ccf3fe41c39e8c6da5f00229c342a5dfb776.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/224de929f920968372bf734c20cc4ff442f8e4cb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_32b993d1fea4093ce9a89ed5c7d26e2a6125b32c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/1088ad104b07e71f248ad48bc68106dd9eb93bd8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_3effcd62cdc9e558ddd9a2f08c92ae8e7d0f1fb5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b0f494a74da4ad98246d1d5f20b37c793ce18499/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e64831d458cfe8189f370249451728f0e3d592f">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_839cc55ce062ecad7b9e746fa13775d5f292e0ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/bugly_crash_release__2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f714da14a952d12529974cad9f0c7ae3cf1b9a42">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/bugly_crash_release__2.1_3179939022c00e11ddd588c98e15b8e8b228b020.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/SocialSDK_Sina_Simplify.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2733f75e9b808bfbf54db957b375f21d9eeb4c4d">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/SocialSDK_Sina_Simplify_7a2a73949105c9f4acaacdd39259a1629dda6944.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/8b8339ea56a12af367717b636936a675636a778b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_c9fc1d8f38792b5abff9384db840e2d39806b55d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/umeng_social_net.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ae5e7e8f78a0b150398087327eda81f872cdcae2">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/umeng_social_net_db58719db859816d124d428d04a5a36f85cb0c77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/sha1utils.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e777f426888bb1df2504e936d2825ff43c31425b">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/sha1utils_400236344c0680c36bc3bd89e668fe7a294a5ab0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/edfc7c310c75c69ace457781f0c6c6e75a1a2be9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_e04cdfe6d58c84bf156eeb1a56609f9b656230ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/ae835ce0e4f58b97d71c081098a6c547a015ae1d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a15b459774e4ef0d7f5a00626e398454803be92">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_28b6b14314b08cda37355c158bc355404de1acc4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-25.4.0_f1f216e62906220fbd8d75090db582a62287d321.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b41c21c88a0ed6ae21506b7b22050c595cd13af5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="212069bc3e4bdf6241f8bb321a047d98e63d029c">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_2ceafbdcb1aeb5ec1342149305621a87a07545b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/wechat-sdk-android-with-mta-1.1.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="379056fcb09a02bd0db722be359695ad88beb04d">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/wechat-sdk-android-with-mta-1.1.6_da0cfdd4db250f7ad30e2e2cea19b1c7dd134039.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/d23da3c710f7ab26a6e382bc68b264dec8ec83f3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8dabcf4360108dbd5fb9bf21bb3bdf3ff72de01a">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_676c019658ce5f3f59f50d37435822da5731e832.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/gson-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/gson-2.3.1_dbc3c71d129955d03cc73f5391766730fc8e0c36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/205c3437bce4623cd257bf1ae7eae9458eefea39/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_8e2a3ca27fd6e6be3a9932aa3cfa65d33531bd5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/3a048a78acbb7a560e5cec1f86dd2331530b60c4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_d76106a98bd6a6877fa9f5d505d9f87de5dc99f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/3a31fe12c4bd3240474e765a00ea0f4e00df9476/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_d9b3243e06f51f4fcc80c7e75fd2f5355d3a445b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_3a7bb22909d54c29ad509a57a46c723008d7ecb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b906808f194b927d5c27b888cd37c7d1dfacb4a7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1c61a2a6a30562d8f00d91d79a38f2a78ede10a7">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_0005c41f45cd3b0fe511a41e5715e0ad8fa6249f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b41c21c88a0ed6ae21506b7b22050c595cd13af5/output/jars/libs/LiteAVSDK_Smart.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f1344a3bb41cbfacb4460d53f485bcb05ca39be">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/LiteAVSDK_Smart_63d7a2db0fbffd410bc70ba23e8eb88e88eb2200.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/aee8d400e99057c5f276dec4aab19ff4766afa8f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9727818268ecf0911550214db722acc5d1d994ba">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_a8c150145ecbd0284289f72828df0ffe32a61d12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/glide-3.7.0_2ed9e89df4737887159a80b851decef0f017a895.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/224de929f920968372bf734c20cc4ff442f8e4cb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_32b993d1fea4093ce9a89ed5c7d26e2a6125b32c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/437273c3048cbb520875ed3b51a0e495ba15e831/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_7df70d005f0dbe801e1f0d0d0351c7d94d35fdfb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/umeng_social_net.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ae5e7e8f78a0b150398087327eda81f872cdcae2">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/umeng_social_net_db58719db859816d124d428d04a5a36f85cb0c77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/aee8d400e99057c5f276dec4aab19ff4766afa8f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9727818268ecf0911550214db722acc5d1d994ba">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_a8c150145ecbd0284289f72828df0ffe32a61d12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/SocialSDK_QQ_Simplify.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6613d9480532b6b4d91aafd192350e0b9fcee502">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/SocialSDK_QQ_Simplify_4d11f8d35b57dae40a466ab0bf59fbe26fefc28a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/SocialSDK_Sina_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2733f75e9b808bfbf54db957b375f21d9eeb4c4d">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/SocialSDK_Sina_Simplify_7a2a73949105c9f4acaacdd39259a1629dda6944.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/2bec5a3cd34802aba8ff7a3ac71aba60bfbd04eb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_a983850e370d81ae8dc0f8c22006122b226fa956.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/bugly_crash_release__2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f714da14a952d12529974cad9f0c7ae3cf1b9a42">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/bugly_crash_release__2.1_3179939022c00e11ddd588c98e15b8e8b228b020.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/a4e52562164e9da84941039ee32f62e39f769fa1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_4e7f383b20d9c4a31db8662918cb7c66659b97ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/d23da3c710f7ab26a6e382bc68b264dec8ec83f3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8dabcf4360108dbd5fb9bf21bb3bdf3ff72de01a">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_676c019658ce5f3f59f50d37435822da5731e832.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-25.4.0_f1f216e62906220fbd8d75090db582a62287d321.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/wechat-sdk-android-with-mta-1.1.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="379056fcb09a02bd0db722be359695ad88beb04d">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/wechat-sdk-android-with-mta-1.1.6_da0cfdd4db250f7ad30e2e2cea19b1c7dd134039.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/gson-2.3.1_dbc3c71d129955d03cc73f5391766730fc8e0c36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/glide-3.7.0_2ed9e89df4737887159a80b851decef0f017a895.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/okhttp-3.2.0_f49e9e89c4c5875367baa4ec78ce644463e288dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b41c21c88a0ed6ae21506b7b22050c595cd13af5/output/jars/libs/LiteAVSDK_Smart.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f1344a3bb41cbfacb4460d53f485bcb05ca39be">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/LiteAVSDK_Smart_63d7a2db0fbffd410bc70ba23e8eb88e88eb2200.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/3a31fe12c4bd3240474e765a00ea0f4e00df9476/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_d9b3243e06f51f4fcc80c7e75fd2f5355d3a445b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/open_sdk_r5781.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cbac7d081542657d885efd7a529a9267d22ec080">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/open_sdk_r5781_428157a2d82bf105ffade6af2c442c665910ad3a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/c17f67de997f2a916d57ac6365189ce9b2717bcc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_c18edd8003f9eb0ac6ac1add562f6d787a63ccbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/253f0bddef38e062ae3cdc3de4a8c29f7b6aa281/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6b7411de41dddd555aed1507682f980df61b9f27">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_72a257bec57894a23d5ab521e7ab81ac290049a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/32d297c84728d6709bac36d9541bc49012b5d393/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_3cceb1be9da0a2dc37100a9bcc204dded3345ab8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/b906808f194b927d5c27b888cd37c7d1dfacb4a7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1c61a2a6a30562d8f00d91d79a38f2a78ede10a7">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_0005c41f45cd3b0fe511a41e5715e0ad8fa6249f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/SocialSDK_WeChat_Simplify.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dbad0e3e7ac8062dd9f7ce3e60ab0ddccc44553f">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/SocialSDK_WeChat_Simplify_5f2b43a1d57a049cb0f5972d584a25270f19cc17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/5112e6950bf2c3fb44a3adbfb65a2d3cb4372744/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="84cb66fcbb8a4da0c752478dc9f92a6df26d22d9">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_90c489a0f85c37d43cfc9cecfdcd3a0756bea6c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/c17f67de997f2a916d57ac6365189ce9b2717bcc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_c18edd8003f9eb0ac6ac1add562f6d787a63ccbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/SocialSDK_QQ_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6613d9480532b6b4d91aafd192350e0b9fcee502">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/SocialSDK_QQ_Simplify_4d11f8d35b57dae40a466ab0bf59fbe26fefc28a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/zxing-core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/zxing-core-3.2.1_3e9b2df8d95d113a9144ec8763c03afa9563e399.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/2bec5a3cd34802aba8ff7a3ac71aba60bfbd04eb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_a983850e370d81ae8dc0f8c22006122b226fa956.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/d51094eb07b16292b5561a41adb7e67bcc9cfc1d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_f6625fb094e325be9924aea2bfd2c53d2297f9db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/libs/umeng_social_api.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="35352ed1ecfb082e85996474c3048332d1374276">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/umeng_social_api_d010b8eb073e46dd33c42a66a215a6531cc95436.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/wangyang/.android/build-cache/a4e52562164e9da84941039ee32f62e39f769fa1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="/Users/wangyang/aiya-git/AiyaEffectsWithTengxunyunAndroid/app/build/intermediates/pre-dexed/debug/classes_4e7f383b20d9c4a31db8662918cb7c66659b97ed.jar" />
     </item>
 
 </items>

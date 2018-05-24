@@ -43,8 +43,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aiyaapp.aavt.gl.BaseFilter;
+import com.aiyaapp.aiya.AiyaBeauty;
 import com.aiyaapp.aiya.AiyaEffects;
 import com.aiyaapp.aiya.AiyaTracker;
+import com.aiyaapp.aiya.filter.AyBeautyFilter;
+import com.aiyaapp.aiya.filter.AyBigEyeFilter;
+import com.aiyaapp.aiya.filter.AyThinFaceFilter;
+import com.aiyaapp.aiya.filter.AyTrackFilter;
 import com.aiyaapp.aiya.render.AiyaGiftFilter;
 import com.tencent.liteav.demo.R;
 import com.tencent.liteav.demo.common.activity.QRCodeScanActivity;
@@ -143,8 +148,14 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     // 关注系统设置项“自动旋转”的状态切换
     private RotationObserver mRotationObserver = null;
 
+    private AyTrackFilter mTrackFilter;
+    private AyBeautyFilter mAiyaBeautyFilter;
+    private AyBigEyeFilter mAiyaBigEeyeFilter;
+    private AyThinFaceFilter mAiyaThinFaceFilter;
     private AiyaGiftFilter mGiftFilter;
-    private BaseFilter mProcessFilter;
+
+    // 临时的推流地址, 由哎吖科技提供, 方便测试
+    private String RTMP_PUBLISH_URL = "rtmp://120.25.237.18:1935/live/824";
 
     private Bitmap decodeResource(Resources resources, int id) {
         TypedValue value = new TypedValue();
@@ -193,17 +204,60 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
         mLivePusher.setVideoProcessListener(new TXLivePusher.VideoCustomProcessListener() {
             @Override
-            public int onTextureCustomProcess(int i, int i1, int i2) {
+            public int onTextureCustomProcess(int texture, int width, int height) {
                 if(mGiftFilter==null){
-                    mGiftFilter=new AiyaGiftFilter(getApplicationContext(),new AiyaTracker(getApplicationContext()));
+                    // 人脸跟踪
+                    mTrackFilter = new AyTrackFilter(getBaseContext());
+                    mTrackFilter.create();
+                    mTrackFilter.sizeChanged(width, height);
+
+                    // 美颜
+                    mAiyaBeautyFilter = new AyBeautyFilter(AiyaBeauty.TYPE1);
+                    mAiyaBeautyFilter.create();
+                    mAiyaBeautyFilter.sizeChanged(width, height);
+                    mAiyaBeautyFilter.setDegree(1.0f);
+
+                    // 大眼
+                    mAiyaBigEeyeFilter = new AyBigEyeFilter();
+                    mAiyaBigEeyeFilter.create();
+                    mAiyaBigEeyeFilter.sizeChanged(width, height);
+                    mAiyaBigEeyeFilter.setDegree(0.5f);
+
+                    // 瘦脸
+                    mAiyaThinFaceFilter = new AyThinFaceFilter();
+                    mAiyaThinFaceFilter.create();
+                    mAiyaThinFaceFilter.sizeChanged(width, height);
+                    mAiyaThinFaceFilter.setDegree(0.5f);
+
+                    // 特效
+                    mGiftFilter = new AiyaGiftFilter(getBaseContext(), new AiyaTracker(getBaseContext()));
                     mGiftFilter.create();
-                    mGiftFilter.sizeChanged(i1,i2);
-                    mGiftFilter.setEffect("assets/sticker/bunny/meta.json");
+                    mGiftFilter.sizeChanged(width, height);
+                    mGiftFilter.setEffect("assets/sticker/mogulin/meta.json");
                 }
-                int out=mGiftFilter.drawToTexture(i);
+
+                // 进行人脸识别
+                mTrackFilter.drawToTexture(texture);
+
+                // 绘制美颜
+                texture = mAiyaBeautyFilter.drawToTexture(texture);
+
+                // 绘制礼物
+                mGiftFilter.setFaceDataID(mTrackFilter.getFaceDataID());
+                texture = mGiftFilter.drawToTexture(texture);
+
+                // 绘制大眼
+                mAiyaBigEeyeFilter.setFaceDataID(mTrackFilter.getFaceDataID());
+                texture  = mAiyaBigEeyeFilter.drawToTexture(texture);
+
+                // 绘制瘦脸
+                mAiyaThinFaceFilter.setFaceDataID(mTrackFilter.getFaceDataID());
+                texture = mAiyaThinFaceFilter.drawToTexture(texture);
+
+                // 处理OpenGL状态
                 GLES20.glDisable(GLES20.GL_BLEND);
                 GLES20.glDisable(GLES20.GL_DEPTH_TEST);
-                return out;
+                return texture;
             }
 
             @Override
@@ -213,7 +267,10 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
             @Override
             public void onTextureDestoryed() {
-
+                mGiftFilter.destroy();
+                mAiyaBeautyFilter.destroy();
+                mAiyaBigEeyeFilter.destroy();
+                mAiyaThinFaceFilter.destroy();
             }
         });
 
@@ -297,7 +354,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mScrollView.setVisibility(View.GONE);
 
         mRtmpUrlView.setHint(" 请输入或扫二维码获取推流地址");
-        mRtmpUrlView.setText("");
+        mRtmpUrlView.setText(RTMP_PUBLISH_URL);
 
         Button btnNew = (Button)findViewById(R.id.btnNew);
         btnNew.setVisibility(View.VISIBLE);

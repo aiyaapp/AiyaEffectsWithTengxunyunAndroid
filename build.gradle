@@ -3,6 +3,7 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -17,6 +18,7 @@ allprojects {
         flatDir {
             dirs 'libs'
         }
+        google()
         jcenter()
         maven { url "https://dl.bintray.com/aiyaapp/sdk" }
     }
@@ -24,19 +26,4 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-ext {
-    compileSdkVersion = 25
-    buildToolsVersion = "25.0.2"
-    minSdkVersion = 15
-    targetSdkVersion = 23
-    versionCode = 1
-    versionName = "v1.0"
-    proguard = true
-    rootPrj = "$projectDir/.."
-    ndkAbi = 'armeabi'//, 'armeabi-v7a', 'arm64-v8a'
-    sdkType = "liteavsdk"
-    noffmpeg = false
-    noijkplay = false
 }
