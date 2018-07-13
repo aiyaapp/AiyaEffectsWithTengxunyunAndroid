@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.aiyaapp.aiya.test"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 1
         versionName "2.0"
 
@@ -22,28 +22,30 @@ android {
         }
     }
 
-//    dexOptions {
-//        jumboMode true
-//    }
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation project(':AyCore')
+//    implementation project(':AyFaceTrack')
+//    implementation project(':AyEffect')
+//    implementation project(':AyShortVideoEffect')
+//    implementation project(':AyBeauty')
+//    implementation project(':aavt')
 
     compile(name: 'zxing-1.8.4', ext: 'aar')
     compile(name: 'barcodescanner-core-1.8.4', ext: 'aar')
     compile(name: 'volley-1.0.0', ext: 'aar')
     compile(name: 'LiteAVSDK_Smart', ext: 'aar')
     compile(name: 'liteimsdk-release', ext: 'aar')
+//    compile(name: 'AyFaceTrack-debug', ext: 'aar')
 
-    compile 'com.android.support:appcompat-v7:25.+'
-    compile 'com.android.support:recyclerview-v7:25.+'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:recyclerview-v7:27.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 //    compile 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
@@ -52,10 +54,10 @@ dependencies {
     compile files('libs/sha1utils.jar')
     compile files('libs/okio-1.6.0.jar')
 
-    compile 'com.aiyaapp.aavt:aavt:v4.0.7'
-    compile 'com.aiyaapp.aiya:AyCore:v4.0.7'
-    compile 'com.aiyaapp.aiya:AyEffect:v4.0.7'
-    compile 'com.aiyaapp.aiya:AyBeauty:v4.0.7'
-    compile 'com.aiyaapp.aiya:AyFaceTrack:v4.0.7'
-    compile 'com.aiyaapp.aiya:AyShortVideoEffect:v4.0.7'
+    compile 'com.aiyaapp.aavt:aavt:v4.0.8'
+    compile 'com.aiyaapp.aiya:AyCore:v4.0.8'
+    compile 'com.aiyaapp.aiya:AyEffect:v4.0.8'
+    compile 'com.aiyaapp.aiya:AyBeauty:v4.0.8'
+    compile 'com.aiyaapp.aiya:AyFaceTrack:v4.0.8'
+    compile 'com.aiyaapp.aiya:AyShortVideoEffect:v4.0.8'
 }

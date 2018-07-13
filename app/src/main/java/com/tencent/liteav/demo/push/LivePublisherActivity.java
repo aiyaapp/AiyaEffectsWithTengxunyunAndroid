@@ -66,6 +66,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.nio.IntBuffer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +79,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+
+import static android.opengl.GLES20.*;
 
 public class LivePublisherActivity extends Activity implements View.OnClickListener , ITXLivePushListener, BeautySettingPannel.IOnBeautyParamsChangeListener/*, ImageReader.OnImageAvailableListener*/{
     private static final String TAG = LivePublisherActivity.class.getSimpleName();
@@ -203,6 +206,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         // TODO: 2017/12/25 0025 添加Aiya特效 
 
         mLivePusher.setVideoProcessListener(new TXLivePusher.VideoCustomProcessListener() {
+
             @Override
             public int onTextureCustomProcess(int texture, int width, int height) {
                 if(mGiftFilter==null){
@@ -230,7 +234,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                     mAiyaThinFaceFilter.setDegree(0.5f);
 
                     // 特效
-                    mGiftFilter = new AiyaGiftFilter(getBaseContext(), new AiyaTracker(getBaseContext()));
+                    mGiftFilter = new AiyaGiftFilter(getBaseContext(), null);
                     mGiftFilter.create();
                     mGiftFilter.sizeChanged(width, height);
                     mGiftFilter.setEffect("assets/sticker/mogulin/meta.json");
@@ -255,8 +259,9 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 texture = mAiyaThinFaceFilter.drawToTexture(texture);
 
                 // 处理OpenGL状态
-                GLES20.glDisable(GLES20.GL_BLEND);
-                GLES20.glDisable(GLES20.GL_DEPTH_TEST);
+                glDisable(GL_BLEND);
+                glDisable(GL_DEPTH_TEST);
+
                 return texture;
             }
 
@@ -267,6 +272,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
             @Override
             public void onTextureDestoryed() {
+                mTrackFilter.destroy();
                 mGiftFilter.destroy();
                 mAiyaBeautyFilter.destroy();
                 mAiyaBigEeyeFilter.destroy();

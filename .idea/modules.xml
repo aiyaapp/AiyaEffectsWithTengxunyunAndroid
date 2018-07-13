@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AiyaEffectsWithTengxunyunAndroid.iml" filepath="$PROJECT_DIR$/AiyaEffectsWithTengxunyunAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyBeauty/AyBeauty.iml" filepath="$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyBeauty/AyBeauty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyCore/AyCore.iml" filepath="$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyCore/AyCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyEffect/AyEffect.iml" filepath="$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyEffect/AyEffect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyFaceTrack/AyFaceTrack.iml" filepath="$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyFaceTrack/AyFaceTrack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyShortVideoEffect/AyShortVideoEffect.iml" filepath="$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/AyShortVideoEffect/AyShortVideoEffect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/aavt/aavt.iml" filepath="$PROJECT_DIR$/../AiyaEffectsAndroid/AiyaEffectSDK/aavt/aavt.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
