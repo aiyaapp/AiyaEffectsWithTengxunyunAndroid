@@ -277,6 +277,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 mAiyaBeautyFilter.destroy();
                 mAiyaBigEeyeFilter.destroy();
                 mAiyaThinFaceFilter.destroy();
+                mGiftFilter = null;
             }
         });
 
