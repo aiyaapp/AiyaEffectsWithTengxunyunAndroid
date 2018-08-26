@@ -8,4 +8,4 @@
 
 
 # 联系方式
-邮箱: <liudawei@aiyaapp.com>
+邮箱: <marketing@aiyaapp.com>
