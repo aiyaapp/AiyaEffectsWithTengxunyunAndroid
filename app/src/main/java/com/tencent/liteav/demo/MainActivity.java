@@ -15,7 +15,6 @@ import com.tencent.liteav.demo.play.VodPlayerActivity;
 import com.tencent.liteav.demo.push.LivePublisherActivity;
 
 import java.util.ArrayList;
-import com.aiyaapp.aiya.AiyaEffects;
 
 public class MainActivity extends Activity {
 
@@ -27,7 +26,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AiyaEffects.init(this,"477de67d19ba39fb656a4806c803b552");
 
         if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
             Log.d(TAG, "brought to front");
