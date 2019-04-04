@@ -15,6 +15,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.opengl.GLES20;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -41,12 +42,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aiyaapp.aiya.AiyaBeauty;
-import com.aiyaapp.aiya.filter.AyBeautyFilter;
-import com.aiyaapp.aiya.filter.AyBigEyeFilter;
-import com.aiyaapp.aiya.filter.AyThinFaceFilter;
-import com.aiyaapp.aiya.filter.AyTrackFilter;
-import com.aiyaapp.aiya.render.AiyaGiftFilter;
+import com.aiyaapp.aiya.AYEffectHandler;
+import com.aiyaapp.aiya.gpuImage.AYGPUImageConstants;
 import com.tencent.liteav.demo.R;
 import com.tencent.liteav.demo.common.activity.QRCodeScanActivity;
 import com.tencent.liteav.demo.common.widget.BeautySettingPannel;
@@ -62,6 +59,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.nio.IntBuffer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,64 +73,62 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import static android.opengl.GLES20.GL_BLEND;
-import static android.opengl.GLES20.GL_DEPTH_TEST;
-import static android.opengl.GLES20.glDisable;
+import static android.opengl.GLES20.*;
 
-public class LivePublisherActivity extends Activity implements View.OnClickListener, ITXLivePushListener, BeautySettingPannel.IOnBeautyParamsChangeListener/*, ImageReader.OnImageAvailableListener*/ {
+public class LivePublisherActivity extends Activity implements View.OnClickListener , ITXLivePushListener, BeautySettingPannel.IOnBeautyParamsChangeListener/*, ImageReader.OnImageAvailableListener*/{
     private static final String TAG = LivePublisherActivity.class.getSimpleName();
 
     private TXLivePushConfig mLivePushConfig;
     private TXLivePusher mLivePusher;
     private TXCloudVideoView mCaptureView;
 
-    private LinearLayout mBitrateLayout;
+    private LinearLayout     mBitrateLayout;
     private BeautySettingPannel mBeautyPannelView;
-    private ScrollView mScrollView;
-    private RadioGroup mRadioGroupBitrate;
-    private Button mBtnBitrate;
-    private Button mBtnPlay;
-    private Button mBtnFaceBeauty;
-    private Button mBtnTouchFocus;
-    private Button mBtnHWEncode;
-    private Button mBtnOrientation;
-    protected EditText mRtmpUrlView;
-    public TextView mLogViewStatus;
-    public TextView mLogViewEvent;
-    private boolean mPortrait = true;         //手动切换，横竖屏推流
-    private boolean mFrontCamera = true;
+    private ScrollView       mScrollView;
+    private RadioGroup       mRadioGroupBitrate;
+    private Button           mBtnBitrate;
+    private Button           mBtnPlay;
+    private Button           mBtnFaceBeauty;
+    private Button           mBtnTouchFocus;
+    private Button           mBtnHWEncode;
+    private Button           mBtnOrientation;
+    protected EditText       mRtmpUrlView;
+    public TextView          mLogViewStatus;
+    public TextView          mLogViewEvent;
+    private boolean          mPortrait = true;         //手动切换，横竖屏推流
+    private boolean          mFrontCamera = true;
 
-    private boolean mVideoPublish;
+    private boolean          mVideoPublish;
 
-    private int mVideoSrc = VIDEO_SRC_CAMERA;
-    private boolean mHWVideoEncode = true;
-    private boolean mTouchFocus = true;
-    private boolean mHWListConfirmDialogResult = false;
-    private int mBeautyLevel = 5;
-    private int mWhiteningLevel = 3;
-    private int mRuddyLevel = 2;
-    private int mBeautyStyle = TXLiveConstants.BEAUTY_STYLE_SMOOTH;
+    private int              mVideoSrc = VIDEO_SRC_CAMERA;
+    private boolean          mHWVideoEncode = true;
+    private boolean          mTouchFocus  = true;
+    private boolean          mHWListConfirmDialogResult = false;
+    private int              mBeautyLevel = 5;
+    private int              mWhiteningLevel = 3;
+    private int              mRuddyLevel = 2;
+    private int              mBeautyStyle = TXLiveConstants.BEAUTY_STYLE_SMOOTH;
 
-    private Handler mHandler = new Handler();
+    private Handler          mHandler = new Handler();
 
-    private Bitmap mBitmap;
+    private Bitmap           mBitmap;
 
     private static final int VIDEO_SRC_CAMERA = 0;
     private static final int VIDEO_SRC_SCREEN = 1;
-    private int mCurrentVideoResolution = TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640;
+    private int              mCurrentVideoResolution = TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640;
 
-    protected StringBuffer mLogMsg = new StringBuffer("");
+    protected StringBuffer          mLogMsg = new StringBuffer("");
     private final int mLogMsgLenLimit = 3000;
     private int mNetBusyCount = 0;
     private Handler mMainHandler;
     private TextView mNetBusyTips;
     LinearLayout mBottomLinear = null;
 
-    private boolean mIsRealTime = false;
-    public static final int ACTIVITY_TYPE_PUBLISH = 1;
-    public static final int ACTIVITY_TYPE_LIVE_PLAY = 2;
-    public static final int ACTIVITY_TYPE_VOD_PLAY = 3;
-    public static final int ACTIVITY_TYPE_LINK_MIC = 4;
+    private boolean     mIsRealTime = false;
+    public static final int ACTIVITY_TYPE_PUBLISH      = 1;
+    public static final int ACTIVITY_TYPE_LIVE_PLAY    = 2;
+    public static final int ACTIVITY_TYPE_VOD_PLAY     = 3;
+    public static final int ACTIVITY_TYPE_LINK_MIC     = 4;
 
 //    private final int           REQUEST_CODE_CS = 10001;
 
@@ -148,15 +144,11 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     // 关注系统设置项“自动旋转”的状态切换
     private RotationObserver mRotationObserver = null;
 
-    private AyTrackFilter mTrackFilter;
-    private AyBeautyFilter mAiyaBeautyFilter;
-    private AyBigEyeFilter mAiyaBigEeyeFilter;
-    private AyThinFaceFilter mAiyaThinFaceFilter;
-    private AiyaGiftFilter mGiftFilter;
-
+    // ---------- 哎吖科技添加 开始----------
     // 临时的推流地址, 由哎吖科技提供, 方便测试
     private String RTMP_PUBLISH_URL = "rtmp://120.25.237.18:1935/live/824";
-    private int mEyeScale = 0;
+    AYEffectHandler effectHandler;
+    // ---------- 哎吖科技添加 结束----------
 
     private Bitmap decodeResource(Resources resources, int id) {
         TypedValue value = new TypedValue();
@@ -170,12 +162,12 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mLivePusher = new TXLivePusher(this);
+        mLivePusher     = new TXLivePusher(this);
         mLivePushConfig = new TXLivePushConfig();
         mLivePusher.setBeautyFilter(mBeautyStyle, mBeautyLevel, mWhiteningLevel, mRuddyLevel);
         mLivePusher.setConfig(mLivePushConfig);
 
-        mBitmap = decodeResource(getResources(), R.drawable.watermark);
+        mBitmap         = decodeResource(getResources(),R.drawable.watermark);
 
         mRotationObserver = new RotationObserver(new Handler());
         mRotationObserver.startObserver();
@@ -184,7 +176,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
         setContentView();
 
-        LinearLayout backLL = (LinearLayout) findViewById(R.id.back_ll);
+        LinearLayout backLL = (LinearLayout)findViewById(R.id.back_ll);
         backLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,7 +186,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         TextView titleTV = (TextView) findViewById(R.id.title_tv);
         titleTV.setText(getIntent().getStringExtra("TITLE"));
 
-        mBottomLinear = (LinearLayout) findViewById(R.id.btns_tests);
+        mBottomLinear = (LinearLayout)findViewById(R.id.btns_tests);
 
         checkPublishPermission();
 
@@ -205,58 +197,35 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
             @Override
             public int onTextureCustomProcess(int texture, int width, int height) {
-                if (mGiftFilter == null) {
-                    // 人脸跟踪
-                    mTrackFilter = new AyTrackFilter(getBaseContext());
-                    mTrackFilter.create();
-                    mTrackFilter.sizeChanged(width, height);
 
-                    // 美颜
-                    mAiyaBeautyFilter = new AyBeautyFilter(AiyaBeauty.TYPE1);
-                    mAiyaBeautyFilter.create();
-                    mAiyaBeautyFilter.sizeChanged(width, height);
-                    mAiyaBeautyFilter.setDegree(1.0f);
+                // ---------- 哎吖科技添加 开始 ----------
+                // 绘制特效
+                if (effectHandler == null) {
+                    effectHandler = new AYEffectHandler(getApplicationContext());
+                    // 设置美颜程度
+                    effectHandler.setIntensityOfBeauty(0.5f);
+                    // 设置大眼瘦脸
+                    effectHandler.setIntensityOfBigEye(0.2f);
+                    effectHandler.setIntensityOfSlimFace(0.8f);
 
-                    // 大眼
-                    mAiyaBigEeyeFilter = new AyBigEyeFilter();
-                    mAiyaBigEeyeFilter.create();
-                    mAiyaBigEeyeFilter.sizeChanged(width, height);
+                    try {
+                        // 添加滤镜
+                        effectHandler.setStyle(BitmapFactory.decodeStream(getApplication().getAssets().open("FilterResources/filter/03桃花.JPG")));
+                        effectHandler.setIntensityOfStyle(0.5f);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
-                    // 瘦脸
-                    mAiyaThinFaceFilter = new AyThinFaceFilter();
-                    mAiyaThinFaceFilter.create();
-                    mAiyaThinFaceFilter.sizeChanged(width, height);
-                    mAiyaThinFaceFilter.setDegree(0.5f);
+                    // 设置正常的方向
+                    effectHandler.setRotateMode(AYGPUImageConstants.AYGPUImageRotationMode.kAYGPUImageFlipHorizontal);
 
-                    // 特效
-                    mGiftFilter = new AiyaGiftFilter(getBaseContext(), null);
-                    mGiftFilter.create();
-                    mGiftFilter.sizeChanged(width, height);
-                    mGiftFilter.setEffect("assets/sticker/mogulin/meta.json");
+                    // 设置特效
+                    effectHandler.setEffectPath(getApplication().getExternalCacheDir() + "/aiya/effect/2017/meta.json");
                 }
 
-                // 进行人脸识别
-                mTrackFilter.drawToTexture(texture);
+                effectHandler.processWithTexture(texture, width, height);
+                // ---------- 哎吖科技添加 结束 ----------
 
-                // 绘制美颜
-                texture = mAiyaBeautyFilter.drawToTexture(texture);
-
-                // 绘制礼物
-                mGiftFilter.setFaceDataID(mTrackFilter.getFaceDataID());
-                texture = mGiftFilter.drawToTexture(texture);
-
-                // 绘制大眼
-                mAiyaBigEeyeFilter.setDegree(mEyeScale);
-                mAiyaBigEeyeFilter.setFaceDataID(mTrackFilter.getFaceDataID());
-                texture = mAiyaBigEeyeFilter.drawToTexture(texture);
-
-                // 绘制瘦脸
-                mAiyaThinFaceFilter.setFaceDataID(mTrackFilter.getFaceDataID());
-                texture = mAiyaThinFaceFilter.drawToTexture(texture);
-
-                // 处理OpenGL状态
-                glDisable(GL_BLEND);
-                glDisable(GL_DEPTH_TEST);
 
                 return texture;
             }
@@ -268,12 +237,11 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
             @Override
             public void onTextureDestoryed() {
-                mTrackFilter.destroy();
-                mGiftFilter.destroy();
-                mAiyaBeautyFilter.destroy();
-                mAiyaBigEeyeFilter.destroy();
-                mAiyaThinFaceFilter.destroy();
-                mGiftFilter = null;
+                // ---------- 哎吖科技添加 开始 ----------
+                if (effectHandler != null) {
+                    effectHandler.destroy();
+                }
+                // ---------- 哎吖科技添加 结束 ----------
             }
         });
 
@@ -284,16 +252,14 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
     static class TXPhoneStateListener extends PhoneStateListener {
         WeakReference<TXLivePusher> mPusher;
-
         public TXPhoneStateListener(TXLivePusher pusher) {
             mPusher = new WeakReference<TXLivePusher>(pusher);
         }
-
         @Override
         public void onCallStateChanged(int state, String incomingNumber) {
             super.onCallStateChanged(state, incomingNumber);
             TXLivePusher pusher = mPusher.get();
-            switch (state) {
+            switch(state){
                 //电话等待接听
                 case TelephonyManager.CALL_STATE_RINGING:
                     if (pusher != null) pusher.pausePusher();
@@ -308,17 +274,15 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                     break;
             }
         }
-    }
-
-    ;
+    };
     private PhoneStateListener mPhoneListener = null;
 
     protected void initView() {
-        mRtmpUrlView = (EditText) findViewById(R.id.roomid);
-        mLogViewEvent = (TextView) findViewById(R.id.logViewEvent);
+        mRtmpUrlView   = (EditText) findViewById(R.id.roomid);
+        mLogViewEvent  = (TextView) findViewById(R.id.logViewEvent);
         mLogViewStatus = (TextView) findViewById(R.id.logViewStatus);
 
-        Button scanBtn = (Button) findViewById(R.id.btnScan);
+        Button scanBtn = (Button)findViewById(R.id.btnScan);
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -327,7 +291,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
             }
         });
         scanBtn.setEnabled(true);
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) scanBtn.getLayoutParams();
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)scanBtn.getLayoutParams();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             params.removeRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         }
@@ -357,13 +321,13 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mLogViewStatus.setVisibility(View.GONE);
         mLogViewStatus.setMovementMethod(new ScrollingMovementMethod());
         mLogViewEvent.setMovementMethod(new ScrollingMovementMethod());
-        mScrollView = (ScrollView) findViewById(R.id.scrollview);
+        mScrollView = (ScrollView)findViewById(R.id.scrollview);
         mScrollView.setVisibility(View.GONE);
 
         mRtmpUrlView.setHint(" 请输入或扫二维码获取推流地址");
         mRtmpUrlView.setText(RTMP_PUBLISH_URL);
 
-        Button btnNew = (Button) findViewById(R.id.btnNew);
+        Button btnNew = (Button)findViewById(R.id.btnNew);
         btnNew.setVisibility(View.VISIBLE);
         btnNew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -376,7 +340,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mBeautyPannelView = (BeautySettingPannel) findViewById(R.id.layoutFaceBeauty);
         mBeautyPannelView.setBeautyParamsChangeListener(this);
 
-        mBtnFaceBeauty = (Button) findViewById(R.id.btnFaceBeauty);
+        mBtnFaceBeauty = (Button)findViewById(R.id.btnFaceBeauty);
         mBtnFaceBeauty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -394,9 +358,10 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 if (mVideoPublish) {
                     stopPublishRtmp();
                 } else {
-                    if (mVideoSrc == VIDEO_SRC_CAMERA) {
+                    if(mVideoSrc == VIDEO_SRC_CAMERA){
                         FixOrAdjustBitrate();  //根据设置确定是“固定”还是“自动”码率
-                    } else {
+                    }
+                    else{
                         //录屏横竖屏采用两种分辨率，和摄像头推流逻辑不一样
                     }
                     mVideoPublish = startPublishRtmp();
@@ -450,19 +415,20 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 mHWVideoEncode = !mHWVideoEncode;
                 mBtnHWEncode.getBackground().setAlpha(mHWVideoEncode ? 255 : 100);
 
-                if (mHWVideoEncode) {
+                if (mHWVideoEncode){
                     if (mLivePushConfig != null) {
-                        if (Build.VERSION.SDK_INT < 18) {
+                        if(Build.VERSION.SDK_INT < 18){
                             Toast.makeText(getApplicationContext(), "硬件加速失败，当前手机API级别过低（最低18）", Toast.LENGTH_SHORT).show();
                             mHWVideoEncode = false;
                         }
+                        }
                     }
-                }
-                if (HWVideoEncode != mHWVideoEncode) {
+                if(HWVideoEncode != mHWVideoEncode){
                     mLivePushConfig.setHardwareAcceleration(mHWVideoEncode ? TXLiveConstants.ENCODE_VIDEO_HARDWARE : TXLiveConstants.ENCODE_VIDEO_SOFTWARE);
-                    if (mHWVideoEncode == false) {
+                    if(mHWVideoEncode == false){
                         Toast.makeText(getApplicationContext(), "取消硬件加速", Toast.LENGTH_SHORT).show();
-                    } else {
+                    }
+                    else{
                         Toast.makeText(getApplicationContext(), "开启硬件加速", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -473,8 +439,8 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         });
 
         //码率自适应部分
-        mBtnBitrate = (Button) findViewById(R.id.btnBitrate);
-        mBitrateLayout = (LinearLayout) findViewById(R.id.layoutBitrate);
+        mBtnBitrate = (Button)findViewById(R.id.btnBitrate);
+        mBitrateLayout = (LinearLayout)findViewById(R.id.layoutBitrate);
         mBtnBitrate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -482,7 +448,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
             }
         });
 
-        mRadioGroupBitrate = (RadioGroup) findViewById(R.id.resolutionRadioGroup);
+        mRadioGroupBitrate = (RadioGroup)findViewById(R.id.resolutionRadioGroup);
         mRadioGroupBitrate.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
@@ -527,7 +493,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mBtnOrientation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPortrait = !mPortrait;
+                mPortrait = ! mPortrait;
                 int renderRotation = 0;
                 int orientation = 0;
                 boolean screenCaptureLandscape = false;
@@ -543,46 +509,44 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                     orientation = TXLiveConstants.VIDEO_ANGLE_HOME_RIGHT;
                     renderRotation = 90;
                 }
-                if (VIDEO_SRC_SCREEN == mVideoSrc) {
+                if(VIDEO_SRC_SCREEN == mVideoSrc){
                     //录屏横竖屏推流的判断条件是，视频分辨率取360*640还是640*360
-                    switch (mCurrentVideoResolution) {
+                    switch (mCurrentVideoResolution){
                         case TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640:
-                            if (screenCaptureLandscape)
+                            if(screenCaptureLandscape)
                                 mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_640_360);
-                            else
-                                mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640);
+                            else mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640);
                             break;
                         case TXLiveConstants.VIDEO_RESOLUTION_TYPE_540_960:
-                            if (screenCaptureLandscape)
+                            if(screenCaptureLandscape)
                                 mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_960_540);
-                            else
-                                mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_540_960);
+                            else mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_540_960);
                             break;
                         case TXLiveConstants.VIDEO_RESOLUTION_TYPE_720_1280:
-                            if (screenCaptureLandscape)
+                            if(screenCaptureLandscape)
                                 mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_1280_720);
-                            else
-                                mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_720_1280);
+                            else mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_720_1280);
                             break;
                     }
 
                 }
                 if (mLivePusher.isPushing()) {
-                    if (VIDEO_SRC_CAMERA == mVideoSrc) {
+                    if(VIDEO_SRC_CAMERA == mVideoSrc){
                         mLivePusher.setConfig(mLivePushConfig);
-                    } else if (VIDEO_SRC_SCREEN == mVideoSrc) {
+                    } else if(VIDEO_SRC_SCREEN == mVideoSrc){
                         mLivePusher.setConfig(mLivePushConfig);
                         mLivePusher.stopScreenCapture();
                         mLivePusher.startScreenCapture();
                     }
-                } else mLivePusher.setConfig(mLivePushConfig);
+                }
+                else mLivePusher.setConfig(mLivePushConfig);
                 mLivePusher.setRenderRotation(renderRotation);
             }
         });
 
         View view = findViewById(android.R.id.content);
         view.setOnClickListener(this);
-        mLogViewStatus.setText("Log File Path:" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/txRtmpLog");
+        mLogViewStatus.setText("Log File Path:"+ Environment.getExternalStorageDirectory().getAbsolutePath()+"/txRtmpLog");
     }
 
     protected void HWListConfirmDialog() {
@@ -608,8 +572,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         builder.create().show();
         try {
             Looper.loop();
-        } catch (Exception e) {
-        }
+        }catch (Exception e) {}
     }
 
     @Override
@@ -642,7 +605,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     }
 
     @Override
-    public void onStop() {
+    public void onStop(){
         super.onStop();
         if (mCaptureView != null) {
             mCaptureView.onPause();
@@ -655,9 +618,9 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
         stopPublishRtmp();
         if (mCaptureView != null) {
             mCaptureView.onDestroy();
@@ -684,29 +647,29 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         Log.d(TAG, str);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS");
         String date = sdf.format(System.currentTimeMillis());
-        while (mLogMsg.length() > mLogMsgLenLimit) {
+        while(mLogMsg.length() >mLogMsgLenLimit ){
             int idx = mLogMsg.indexOf("\n");
             if (idx == 0)
                 idx = 1;
-            mLogMsg = mLogMsg.delete(0, idx);
+            mLogMsg = mLogMsg.delete(0,idx);
         }
-        mLogMsg = mLogMsg.append("\n" + "[" + date + "]" + message);
+        mLogMsg = mLogMsg.append("\n" + "["+date+"]" + message);
     }
 
     //公用打印辅助函数
     protected String getNetStatusString(Bundle status) {
         String str = String.format("%-14s %-14s %-12s\n%-14s %-14s %-12s\n%-14s %-14s %-12s\n%-14s %-12s",
-                "CPU:" + status.getString(TXLiveConstants.NET_STATUS_CPU_USAGE),
-                "RES:" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_WIDTH) + "*" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_HEIGHT),
-                "SPD:" + status.getInt(TXLiveConstants.NET_STATUS_NET_SPEED) + "Kbps",
-                "JIT:" + status.getInt(TXLiveConstants.NET_STATUS_NET_JITTER),
-                "FPS:" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_FPS),
-                "ARA:" + status.getInt(TXLiveConstants.NET_STATUS_AUDIO_BITRATE) + "Kbps",
-                "QUE:" + status.getInt(TXLiveConstants.NET_STATUS_CODEC_CACHE) + "|" + status.getInt(TXLiveConstants.NET_STATUS_CACHE_SIZE),
-                "DRP:" + status.getInt(TXLiveConstants.NET_STATUS_CODEC_DROP_CNT) + "|" + status.getInt(TXLiveConstants.NET_STATUS_DROP_SIZE),
-                "VRA:" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE) + "Kbps",
-                "SVR:" + status.getString(TXLiveConstants.NET_STATUS_SERVER_IP),
-                "AVRA:" + status.getInt(TXLiveConstants.NET_STATUS_SET_VIDEO_BITRATE));
+                "CPU:"+status.getString(TXLiveConstants.NET_STATUS_CPU_USAGE),
+                "RES:"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_WIDTH)+"*"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_HEIGHT),
+                "SPD:"+status.getInt(TXLiveConstants.NET_STATUS_NET_SPEED)+"Kbps",
+                "JIT:"+status.getInt(TXLiveConstants.NET_STATUS_NET_JITTER),
+                "FPS:"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_FPS),
+                "ARA:"+status.getInt(TXLiveConstants.NET_STATUS_AUDIO_BITRATE)+"Kbps",
+                "QUE:"+status.getInt(TXLiveConstants.NET_STATUS_CODEC_CACHE)+"|"+status.getInt(TXLiveConstants.NET_STATUS_CACHE_SIZE),
+                "DRP:"+status.getInt(TXLiveConstants.NET_STATUS_CODEC_DROP_CNT)+"|"+status.getInt(TXLiveConstants.NET_STATUS_DROP_SIZE),
+                "VRA:"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE)+"Kbps",
+                "SVR:"+status.getString(TXLiveConstants.NET_STATUS_SERVER_IP),
+                "AVRA:"+status.getInt(TXLiveConstants.NET_STATUS_SET_VIDEO_BITRATE));
         return str;
     }
 
@@ -758,7 +721,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         return true;
     }
 
-    private boolean startPublishRtmp() {
+    private  boolean startPublishRtmp() {
         String rtmpUrl = "";
         String inputUrl = mRtmpUrlView.getText().toString();
         if (!TextUtils.isEmpty(inputUrl)) {
@@ -773,7 +736,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
             return false;
         }
 
-        if (mVideoSrc != VIDEO_SRC_SCREEN) {
+        if(mVideoSrc != VIDEO_SRC_SCREEN){
             mCaptureView.setVisibility(View.VISIBLE);
         }
         // demo默认不加水印
@@ -864,16 +827,17 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         }
         mLivePushConfig.setCustomModeType(customModeType);
         mLivePusher.setPushListener(this);
-        mLivePushConfig.setPauseImg(300, 5);
-        Bitmap bitmap = decodeResource(getResources(), R.drawable.pause_publish);
+        mLivePushConfig.setPauseImg(300,5);
+        Bitmap bitmap = decodeResource(getResources(),R.drawable.pause_publish);
         mLivePushConfig.setPauseImg(bitmap);
         mLivePushConfig.setPauseFlag(TXLiveConstants.PAUSE_FLAG_PAUSE_VIDEO | TXLiveConstants.PAUSE_FLAG_PAUSE_AUDIO);
-        if (mVideoSrc != VIDEO_SRC_SCREEN) {
+        if(mVideoSrc != VIDEO_SRC_SCREEN){
             mLivePushConfig.setFrontCamera(mFrontCamera);
             mLivePushConfig.setBeautyFilter(mBeautyLevel, mWhiteningLevel, mRuddyLevel);
             mLivePusher.setConfig(mLivePushConfig);
             mLivePusher.startCameraPreview(mCaptureView);
-        } else {
+        }
+        else{
             mLivePusher.setConfig(mLivePushConfig);
             mLivePusher.startScreenCapture();
         }
@@ -883,7 +847,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         enableQRCodeBtn(false);
         clearLog();
 
-        mLogMsg.append("liteav sdk version:" + TXLiveBase.getSDKVersionStr());
+        mLogMsg.append("liteav sdk version:"+ TXLiveBase.getSDKVersionStr());
         mLogViewEvent.setText(mLogMsg);
 
         mBtnPlay.setBackgroundResource(R.drawable.play_pause);
@@ -902,7 +866,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mLivePusher.stopPusher();
         mCaptureView.setVisibility(View.GONE);
 
-        if (mBtnHWEncode != null) {
+        if(mBtnHWEncode != null) {
             //mHWVideoEncode = true;
             mLivePushConfig.setHardwareAcceleration(mHWVideoEncode ? TXLiveConstants.ENCODE_VIDEO_HARDWARE : TXLiveConstants.ENCODE_VIDEO_SOFTWARE);
             mBtnHWEncode.setBackgroundResource(R.drawable.quick);
@@ -912,7 +876,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         enableQRCodeBtn(true);
         mBtnPlay.setBackgroundResource(R.drawable.play_start);
 
-        if (mLivePushConfig != null) {
+        if(mLivePushConfig != null) {
             mLivePushConfig.setPauseImg(null);
         }
     }
@@ -970,7 +934,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 break;
             case 1: /*实时*/
                 if (mLivePusher != null) {
-                    mLivePusher.setVideoQuality(TXLiveConstants.VIDEO_QUALITY_REALTIEM_VIDEOCHAT, true, false);
+                    mLivePusher.setVideoQuality(TXLiveConstants.VIDEO_QUALITY_REALTIEM_VIDEOCHAT,  true, false);
                     mCurrentVideoResolution = TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640;
                     //超清默认开启硬件加速
                     if (Build.VERSION.SDK_INT >= 18) {
@@ -993,7 +957,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mMainHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mNetBusyTips.setVisibility(View.GONE);
+               mNetBusyTips.setVisibility(View.GONE);
             }
         }, 5000);
     }
@@ -1033,10 +997,10 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
     @Override
     public void onPushEvent(int event, Bundle param) {
-        Log.e("NotifyCode", "LivePublisherActivity :" + event);
+        Log.e("NotifyCode","LivePublisherActivity :" + event);
         String msg = param.getString(TXLiveConstants.EVT_DESCRIPTION);
         appendEventLog(event, msg);
-        if (mScrollView.getVisibility() == View.VISIBLE) {
+        if (mScrollView.getVisibility() == View.VISIBLE){
             mLogViewEvent.setText(mLogMsg);
             scroll2Bottom(mScrollView, mLogViewEvent);
         }
@@ -1046,22 +1010,25 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         //错误还是要明确的报一下
         if (event < 0) {
             Toast.makeText(getApplicationContext(), param.getString(TXLiveConstants.EVT_DESCRIPTION), Toast.LENGTH_SHORT).show();
-            if (event == TXLiveConstants.PUSH_ERR_OPEN_CAMERA_FAIL || event == TXLiveConstants.PUSH_ERR_OPEN_MIC_FAIL) {
+            if(event == TXLiveConstants.PUSH_ERR_OPEN_CAMERA_FAIL || event == TXLiveConstants.PUSH_ERR_OPEN_MIC_FAIL){
                 stopPublishRtmp();
             }
         }
 
         if (event == TXLiveConstants.PUSH_ERR_NET_DISCONNECT) {
             stopPublishRtmp();
-        } else if (event == TXLiveConstants.PUSH_WARNING_HW_ACCELERATION_FAIL) {
+        }
+        else if (event == TXLiveConstants.PUSH_WARNING_HW_ACCELERATION_FAIL) {
             Toast.makeText(getApplicationContext(), param.getString(TXLiveConstants.EVT_DESCRIPTION), Toast.LENGTH_SHORT).show();
             mLivePushConfig.setHardwareAcceleration(TXLiveConstants.ENCODE_VIDEO_SOFTWARE);
             mBtnHWEncode.setBackgroundResource(R.drawable.quick2);
             mLivePusher.setConfig(mLivePushConfig);
             mHWVideoEncode = false;
-        } else if (event == TXLiveConstants.PUSH_ERR_SCREEN_CAPTURE_UNSURPORT) {
+        }
+        else if (event == TXLiveConstants.PUSH_ERR_SCREEN_CAPTURE_UNSURPORT) {
             stopPublishRtmp();
-        } else if (event == TXLiveConstants.PUSH_ERR_SCREEN_CAPTURE_START_FAILED) {
+        }
+        else if (event == TXLiveConstants.PUSH_ERR_SCREEN_CAPTURE_START_FAILED) {
             stopPublishRtmp();
         } else if (event == TXLiveConstants.PUSH_EVT_CHANGE_RESOLUTION) {
             Log.d(TAG, "change resolution to " + param.getInt(TXLiveConstants.EVT_PARAM2) + ", bitrate to" + param.getInt(TXLiveConstants.EVT_PARAM1));
@@ -1082,12 +1049,12 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     public void onNetStatus(Bundle status) {
         String str = getNetStatusString(status);
         mLogViewStatus.setText(str);
-        Log.d(TAG, "Current status, CPU:" + status.getString(TXLiveConstants.NET_STATUS_CPU_USAGE) +
-                ", RES:" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_WIDTH) + "*" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_HEIGHT) +
-                ", SPD:" + status.getInt(TXLiveConstants.NET_STATUS_NET_SPEED) + "Kbps" +
-                ", FPS:" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_FPS) +
-                ", ARA:" + status.getInt(TXLiveConstants.NET_STATUS_AUDIO_BITRATE) + "Kbps" +
-                ", VRA:" + status.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE) + "Kbps");
+        Log.d(TAG, "Current status, CPU:"+status.getString(TXLiveConstants.NET_STATUS_CPU_USAGE)+
+                ", RES:"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_WIDTH)+"*"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_HEIGHT)+
+                ", SPD:"+status.getInt(TXLiveConstants.NET_STATUS_NET_SPEED)+"Kbps"+
+                ", FPS:"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_FPS)+
+                ", ARA:"+status.getInt(TXLiveConstants.NET_STATUS_AUDIO_BITRATE)+"Kbps"+
+                ", VRA:"+status.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE)+"Kbps");
 //        if (mLivePusher != null){
 //            mLivePusher.onLogRecord("[net state]:\n"+str+"\n");
 //        }
@@ -1099,7 +1066,8 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         super.onConfigurationChanged(newConfig);
     }
 
-    protected void onActivityRotation() {
+    protected void onActivityRotation()
+    {
         // 自动旋转打开，Activity随手机方向旋转之后，需要改变推流方向
         int mobileRotation = this.getWindowManager().getDefaultDisplay().getRotation();
         int pushRotation = TXLiveConstants.VIDEO_ANGLE_HOME_DOWN;
@@ -1122,30 +1090,28 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
         mLivePusher.setRenderRotation(0); //因为activity也旋转了，本地渲染相对正方向的角度为0。
         mLivePushConfig.setHomeOrientation(pushRotation);
         if (mLivePusher.isPushing()) {
-            if (VIDEO_SRC_CAMERA == mVideoSrc) {
+            if(VIDEO_SRC_CAMERA == mVideoSrc){
                 mLivePusher.setConfig(mLivePushConfig);
                 mLivePusher.stopCameraPreview(true);
                 mLivePusher.startCameraPreview(mCaptureView);
-            } else if (VIDEO_SRC_SCREEN == mVideoSrc) {
+            }
+            else if(VIDEO_SRC_SCREEN == mVideoSrc){
                 //录屏横竖屏推流的判断条件是，视频分辨率取360*640还是640*360
-                switch (mCurrentVideoResolution) {
+                switch (mCurrentVideoResolution){
                     case TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640:
-                        if (screenCaptureLandscape)
+                        if(screenCaptureLandscape)
                             mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_640_360);
-                        else
-                            mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640);
+                        else mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_360_640);
                         break;
                     case TXLiveConstants.VIDEO_RESOLUTION_TYPE_540_960:
-                        if (screenCaptureLandscape)
+                        if(screenCaptureLandscape)
                             mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_960_540);
-                        else
-                            mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_540_960);
+                        else mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_540_960);
                         break;
                     case TXLiveConstants.VIDEO_RESOLUTION_TYPE_720_1280:
-                        if (screenCaptureLandscape)
+                        if(screenCaptureLandscape)
                             mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_1280_720);
-                        else
-                            mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_720_1280);
+                        else mLivePushConfig.setVideoResolution(TXLiveConstants.VIDEO_RESOLUTION_TYPE_720_1280);
                         break;
                 }
                 mLivePusher.setConfig(mLivePushConfig);
@@ -1158,12 +1124,12 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     /**
      * 判断Activity是否可旋转。只有在满足以下条件的时候，Activity才是可根据重力感应自动旋转的。
      * 系统“自动旋转”设置项打开；
-     *
      * @return false---Activity可根据重力感应自动旋转
      */
-    protected boolean isActivityCanRotation() {
+    protected boolean isActivityCanRotation()
+    {
         // 判断自动旋转是否打开
-        int flag = Settings.System.getInt(this.getContentResolver(), Settings.System.ACCELEROMETER_ROTATION, 0);
+        int flag = Settings.System.getInt(this.getContentResolver(),Settings.System.ACCELEROMETER_ROTATION, 0);
         if (flag == 0) {
             return false;
         }
@@ -1192,8 +1158,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 break;
             case BeautySettingPannel.BEAUTYPARAM_BIG_EYE:
                 if (mLivePusher != null) {
-//                    mLivePusher.setEyeScaleLevel(params.mBigEyeLevel);
-                    mEyeScale = params.mBigEyeLevel;
+                    mLivePusher.setEyeScaleLevel(params.mBigEyeLevel);
                 }
                 break;
             case BeautySettingPannel.BEAUTYPARAM_FACE_LIFT:
@@ -1250,7 +1215,7 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 break;
             case BeautySettingPannel.BEAUTYPARAM_FILTER_MIX_LEVEL:
                 if (mLivePusher != null) {
-                    mLivePusher.setSpecialRatio(params.mFilterMixLevel / 10.f);
+                    mLivePusher.setSpecialRatio(params.mFilterMixLevel/10.f);
                 }
                 break;
 //            case BeautySettingPannel.BEAUTYPARAM_CAPTURE_MODE:
@@ -1268,17 +1233,20 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
     }
 
     //观察屏幕旋转设置变化，类似于注册动态广播监听变化机制
-    private class RotationObserver extends ContentObserver {
+    private class RotationObserver extends ContentObserver
+    {
         ContentResolver mResolver;
 
-        public RotationObserver(Handler handler) {
+        public RotationObserver(Handler handler)
+        {
             super(handler);
             mResolver = LivePublisherActivity.this.getContentResolver();
         }
 
         //屏幕旋转设置改变时调用
         @Override
-        public void onChange(boolean selfChange) {
+        public void onChange(boolean selfChange)
+        {
             super.onChange(selfChange);
             //更新按钮状态
             if (isActivityCanRotation()) {
@@ -1295,18 +1263,20 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
         }
 
-        public void startObserver() {
+        public void startObserver()
+        {
             mResolver.registerContentObserver(Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), false, this);
         }
 
-        public void stopObserver() {
+        public void stopObserver()
+        {
             mResolver.unregisterContentObserver(this);
         }
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode != 100 || data == null || data.getExtras() == null || TextUtils.isEmpty(data.getExtras().getString("result"))) {
+        if (requestCode != 100 || data ==null || data.getExtras() == null || TextUtils.isEmpty(data.getExtras().getString("result"))) {
             return;
         }
         String result = data.getExtras().getString("result");
@@ -1317,7 +1287,6 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
 
     static class TXFechPushUrlCall implements Callback {
         WeakReference<LivePublisherActivity> mPusher;
-
         public TXFechPushUrlCall(LivePublisherActivity pusher) {
             mPusher = new WeakReference<LivePublisherActivity>(pusher);
         }
@@ -1337,39 +1306,39 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 String rspString = response.body().string();
                 final LivePublisherActivity pusher = mPusher.get();
                 if (pusher != null) {
-                    try {
-                        JSONObject jsonRsp = new JSONObject(rspString);
-                        int code = jsonRsp.optInt("returnValue", -1);
-                        String message = jsonRsp.optString("returnMsg", "");
-                        JSONObject dataObj = jsonRsp.getJSONObject("returnData");
-                        final String pushUrl = dataObj.optString("url_push");
-                        final String rtmpPlayUrl = dataObj.optString("url_play_rtmp");
-                        final String flvPlayUrl = dataObj.optString("url_play_flv");
-                        final String hlsPlayUrl = dataObj.optString("url_play_hls");
-                        final String realtimePlayUrl = dataObj.optString("url_play_acc");
-                        pusher.mMainHandler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                pusher.mRtmpUrlView.setText(pushUrl);
-                                Toast.makeText(pusher, "获取推流地址成功，对应播放地址已复制到剪贴板", Toast.LENGTH_LONG).show();
+                        try {
+                            JSONObject jsonRsp = new JSONObject(rspString);
+                            int code = jsonRsp.optInt("returnValue", -1);
+                            String message = jsonRsp.optString("returnMsg", "");
+                            JSONObject dataObj = jsonRsp.getJSONObject("returnData");
+                            final String pushUrl = dataObj.optString("url_push");
+                            final String rtmpPlayUrl = dataObj.optString("url_play_rtmp");
+                            final String flvPlayUrl = dataObj.optString("url_play_flv");
+                            final String hlsPlayUrl = dataObj.optString("url_play_hls");
+                            final String realtimePlayUrl = dataObj.optString("url_play_acc");
+                            pusher.mMainHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    pusher.mRtmpUrlView.setText(pushUrl);
+                                    Toast.makeText(pusher, "获取推流地址成功，对应播放地址已复制到剪贴板", Toast.LENGTH_LONG).show();
 
-                                String playUrl = String.format("rtmp 协议：%s\n", rtmpPlayUrl)
-                                        + String.format("flv 协议：%s\n", flvPlayUrl)
-                                        + String.format("hls 协议：%s\n", hlsPlayUrl)
-                                        + String.format("低时延播放：%s", realtimePlayUrl);
-                                Log.d(TAG, "fetch play url : " + playUrl);
-                                try {
-                                    ClipboardManager cmb = (ClipboardManager) pusher.getSystemService(Context.CLIPBOARD_SERVICE);
-                                    cmb.setText(playUrl);
-                                } catch (Exception e) {
+                                    String playUrl = String.format("rtmp 协议：%s\n", rtmpPlayUrl)
+                                            + String.format("flv 协议：%s\n", flvPlayUrl)
+                                            + String.format("hls 协议：%s\n", hlsPlayUrl)
+                                            + String.format("低时延播放：%s", realtimePlayUrl);
+                                    Log.d(TAG, "fetch play url : " + playUrl);
+                                    try {
+                                        ClipboardManager cmb = (ClipboardManager) pusher.getSystemService(Context.CLIPBOARD_SERVICE);
+                                        cmb.setText(playUrl);
+                                    } catch (Exception e) {
 
+                                    }
                                 }
-                            }
-                        });
+                            });
 
                         Log.d(TAG, "fetch push url : " + pushUrl);
 
-                    } catch (Exception e) {
+                    } catch(Exception e){
                         Log.e(TAG, "fetch push url error ");
                         Log.e(TAG, e.toString());
                     }
@@ -1387,8 +1356,6 @@ public class LivePublisherActivity extends Activity implements View.OnClickListe
                 pusher.mFetching = false;
             }
         }
-    }
-
-    ;
+    };
     private TXFechPushUrlCall mFechCallback = null;
 }
