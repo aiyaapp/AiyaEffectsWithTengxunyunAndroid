@@ -49,6 +49,6 @@ dependencies {
     compile files('libs/okio-1.6.0.jar')
 
     // ---------- 哎吖科技添加 开始 ---------
-    compile 'com.aiyaapp.aiya:AyEffectSDK:4.2.0'
+    compile 'com.aiyaapp.aiya:AyEffectSDK:4.2.1'
     // ---------- 哎吖科技添加 结束 ---------
 }

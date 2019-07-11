@@ -115,17 +115,17 @@
     <orderEntry type="library" name="Gradle: liteimsdk-release:@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-27.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:libyuv-4.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:libyuv-4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/open_sdk_r5781.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: zxing-1.8.4:@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/gson-2.3.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/SocialSDK_WeChat_Simplify.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyEffectSDK-4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/glide-3.7.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/umeng_social_api.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable-27.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyEffectSDK-4.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: barcodescanner-core-1.8.4:@aar" level="project" />
@@ -133,20 +133,20 @@
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/SocialSDK_Sina_Simplify.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/wechat-sdk-android-with-mta-1.1.6.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: volley-1.0.0:@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyCore-4.2.0" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/SocialSDK_QQ_Simplify.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-fragment-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:runtime-1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/okio-1.6.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-27.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyShortVideoEffect-4.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyBeauty-4.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyShortVideoEffect-4.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyCore-4.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyBeauty-4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-core-1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyEffect-4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyEffect-4.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyFaceTrack-4.2.0" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/cos-sdk-android.1.4.3.11.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.aiyaapp.aiya:AyFaceTrack-4.2.1" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/wangyang/aiya-git/AiyaEffectsWithTencentAndroid/app/libs/okhttp-3.2.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: LiteAVSDK_Smart:@aar" level="project" />
