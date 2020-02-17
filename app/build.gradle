@@ -34,9 +34,9 @@ dependencies {
     compile(name: 'zxing-1.8.4', ext: 'aar')
     compile(name: 'barcodescanner-core-1.8.4', ext: 'aar')
     compile(name: 'volley-1.0.0', ext: 'aar')
-    compile(name: 'LiteAVSDK_Smart', ext: 'aar')
+//     compile(name: 'LiteAVSDK_Smart', ext: 'aar')
+    implementation 'com.tencent.liteavsdk:LiteAVSDK_Smart:6.8.8003'
     compile(name: 'liteimsdk-release', ext: 'aar')
-//    compile(name: 'AyFaceTrack-debug', ext: 'aar')
 
     compile 'com.android.support:appcompat-v7:27.1.1'
     compile 'com.android.support:recyclerview-v7:27.1.1'
@@ -49,6 +49,6 @@ dependencies {
     compile files('libs/okio-1.6.0.jar')
 
     // ---------- 哎吖科技添加 开始 ---------
-    compile 'com.aiyaapp.aiya:AyEffectSDK:4.2.1'
+    compile 'com.aiyaapp.aiya:AyEffectSDK:4.2.5'
     // ---------- 哎吖科技添加 结束 ---------
 }
